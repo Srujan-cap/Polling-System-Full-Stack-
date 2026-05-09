@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poll App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>🗳️ Poll App</h1>
+  <button id="theme-toggle" onclick="toggleTheme()">
+  🌙 Dark Mode
+  </button>
+
+  <!-- 🔐 LOGIN SECTION (visible first) -->
+  <div id="login-section" class="login-card">
+    <h2>Welcome Back 👋</h2>
+    <p class="subtitle">Login to continue</p>
+
+    <input id="username" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+
+    <button onclick="login()">Login</button>
+  </div>
+
+
+  <!-- 📊 APP SECTION (hidden until login) -->
+  <div id="app-section" style="display:none;">
+
+    <!-- Create Poll -->
+    <div class="card create">
+      <input id="question" placeholder="Ask something..." />
+
+      <div id="options"></div>
+
+      <div class="actions">
+        <button class="secondary" onclick="addOption()">+ Add Option</button>
+        <button class="primary" onclick="createPoll()">Create Poll</button>
+      </div>
+    </div>
+
+    <!-- Polls List -->
+    <div id="polls"></div>
+
+    <!-- Logout Button -->
+    <button onclick="logout()" style="margin-top:15px;">Logout</button>
+
+  </div>
+
+</div>
+
+
+<script src="app.js"></script>
+</body>
+</html>
